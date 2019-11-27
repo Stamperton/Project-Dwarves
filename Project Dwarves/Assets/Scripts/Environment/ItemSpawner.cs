@@ -15,12 +15,19 @@ public class ItemSpawner : MonoBehaviour, I_Interactable
     {
         playerToGiveItemTo = other.GetComponent<PlayerItemHandler>();
 
+        print(other.name);
+
         UseInteractable();
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        playerToGiveItemTo = null;
     }
 
     public void UseInteractable()
     {
-        if (playerToGiveItemTo.heldItem != null)
+        if (playerToGiveItemTo.IsHoldingItem())
         return;
 
         GameObject _obj = Instantiate(itemPrefab, playerToGiveItemTo.playerItemSpawnPoint);

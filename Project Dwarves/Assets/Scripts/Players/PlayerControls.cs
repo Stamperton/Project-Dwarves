@@ -65,7 +65,7 @@ public class PlayerControls : MonoBehaviour
 
     void Turning()
     {
-
+        transform.LookAt(transform.position + movement.normalized);
     }
 
     void Boost()

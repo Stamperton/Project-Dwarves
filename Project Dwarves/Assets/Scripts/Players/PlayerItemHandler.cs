@@ -16,4 +16,15 @@ public class PlayerItemHandler : MonoBehaviour
         GameObject _HeldItem = Instantiate(itemToHold, playerItemSpawnPoint);
     }
 
+    public bool IsHoldingItem()
+    {
+        if (heldItem == null)
+        {
+            return false;
+        }
+        else return true;
+    }
+
+
 }
+
